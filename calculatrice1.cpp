@@ -1,44 +1,58 @@
 #include <iostream>
 using namespace std;
-int main (){
 
-double a, b;
-char operateur;
+int main() {
 
-cout << "premier nombre : ";
-cin >> a;
+    double a, b;
+    int choix;
 
-cout << "choississez un operateur : ";
-cin >> operateur;
+    while (true) {
 
-cout << "deuxieme nombre : ";
-cin >> b;
+        cout << "\n===== MENU =====\n";
+        cout << "1. Addition\n";
+        cout << "2. Soustraction\n";
+        cout << "3. Multiplication\n";
+        cout << "4. Division\n";
+        cout << "0. Quitter\n";
+        cout << "Ton choix : ";
+        cin >> choix;
 
-switch (operateur){
-    case '+':
-        cout << "resultat = " << a + b << endl;  
-    break;
+        if (choix == 0) {
+            cout << "Au revoir !" << endl;
+            break;
+        }
 
-    case '-':
-        cout << "resultat = " << a - b << endl;
-    break;
-    
-    case '*':
-        cout << "resultat = " << a * b << endl;
-    break;
+        cout << "Premier nombre : ";
+        cin >> a;
 
-    case '/':
-    if (b != 0)
-        cout << "resultat = " << a / b << endl;
-    else 
-        cout << "erreur : division par zero !" << endl;
-    break;
+        cout << "Deuxieme nombre : ";
+        cin >> b;
 
-    default:
-    cout << "opperateur invalide !" << endl;
-}
-return 0;
+        switch (choix) {
 
+            case 1:
+                cout << "Resultat = " << a + b << endl;
+                break;
 
+            case 2:
+                cout << "Resultat = " << a - b << endl;
+                break;
 
+            case 3:
+                cout << "Resultat = " << a * b << endl;
+                break;
+
+            case 4:
+                if (b != 0)
+                    cout << "Resultat = " << a / b << endl;
+                else
+                    cout << "Erreur : division par zero !" << endl;
+                break;
+
+            default:
+                cout << "Choix invalide !" << endl;
+        }
+    }
+
+    return 0;
 }
